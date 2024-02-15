@@ -1,6 +1,7 @@
 package com.clienteFactura.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,6 +23,7 @@ private String producto;
 
 @ManyToOne
 @JoinColumn(name = "clientes_id")
+@JsonIgnore
 private Clientes clientes;
 
 }

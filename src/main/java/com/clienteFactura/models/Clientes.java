@@ -32,9 +32,4 @@ public class Clientes {
     private List <Facturas> facturas = new ArrayList<>();
 
 
-    public static void setIdClientes(Long id2) {
-        throw new UnsupportedOperationException("Unimplemented method 'setIdClientes'");
-    }
-    
-
 }

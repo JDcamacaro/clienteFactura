@@ -15,7 +15,8 @@ import com.clienteFactura.repository.ClienteRepository;
 public class ClienteService {
 
     @Autowired
-    public ClienteRepository clienteRepository;
+    ClienteRepository clienteRepository;
+
 
 
 
