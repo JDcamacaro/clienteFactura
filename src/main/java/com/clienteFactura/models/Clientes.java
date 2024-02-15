@@ -5,13 +5,18 @@ import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 
 public class Clientes {
@@ -23,8 +28,13 @@ public class Clientes {
     private String Apellido;
     
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "clientes", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List <Facturas> facturas = new ArrayList<>();
+
+
+    public static void setIdClientes(Long id2) {
+        throw new UnsupportedOperationException("Unimplemented method 'setIdClientes'");
+    }
     
 
 }

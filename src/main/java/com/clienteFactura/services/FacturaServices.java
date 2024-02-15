@@ -15,13 +15,24 @@ public class FacturaServices {
     @Autowired
     private FacturaRepository facturaRepository;
 
-    public List<Facturas> todos(){
+    public List<Facturas> todasFact(){
         return facturaRepository.findAll();
     }
 
 
-    public Facturas byId(Long id){
+    @SuppressWarnings("null")
+    public Facturas idFact(Long id){
         return facturaRepository.getReferenceById(id);
+    }
+
+    @SuppressWarnings("null")
+    public Facturas crearFact(Facturas facturas){
+        return facturaRepository.save(facturas);
+    }
+
+    @SuppressWarnings("null")
+    public void borrarFact(Long id){
+        facturaRepository.deleteById(id);
     }
 
 }
